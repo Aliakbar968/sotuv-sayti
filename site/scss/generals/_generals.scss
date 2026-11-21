@@ -1,0 +1,20 @@
+:root {
+  --navy: #1F2A5C;
+  --yellow: #F5B301;
+  --bg: #F7F8FC;
+  --text: #1A1D2E;
+  --muted: #5B6178;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
