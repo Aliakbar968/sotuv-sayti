@@ -1,2 +1,83 @@
+@use 'blocks/filters';
+@use 'blocks/products';
+@use 'blocks/card';
 @import"./blocks/blok";
 @import "./generals/generals";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #f6f6f4;
+  color: #1c1c1a;
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.site-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0dfd9;
+  padding: 16px 0;
+  margin-bottom: 24px;
+
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #1a1a1a;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .admin-badge {
+    font-size: 14px;
+    color: #1a1a1a;
+    text-decoration: none;
+    padding: 6px 12px;
+    border: 1px solid #e0dfd9;
+    border-radius: 8px;
+
+    &:hover {
+      background-color: #f6f6f4;
+    }
+  }
+}
+
+.main-content {
+  flex: 1;
+  padding-bottom: 48px;
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+}
+
+.site-footer {
+  background-color: #ffffff;
+  border-top: 1px solid #e0dfd9;
+  padding: 20px 0;
+  font-size: 14px;
+  color: #666660;
+  text-align: center;
+}

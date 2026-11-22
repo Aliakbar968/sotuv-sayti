@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin panel</title>
+  <link rel="stylesheet" href="/admin/css/admin.css">
+</head>
+<body>
+  <header class="admin-header">
+    <div class="container header-inner">
+      <div>
+        <h1>Admin panel</h1>
+        <p id="shop-name-display" class="shop-subtitle">Do'konim</p>
+      </div>
+      <nav class="admin-nav">
+        <button type="button" class="nav-btn active">Mahsulotlar</button>
+        <button type="button" class="nav-btn" disabled title="Tez kunda">Buyurtmalar</button>
+        <a href="/site/" class="site-link">Saytga o'tish →</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container admin-layout">
+    <!-- 1-bo'lim: Forma kartasi -->
+    <section class="card form-card">
+      <h2 id="form-title">Yangi mahsulot</h2>
+      <form id="product-form" novalidate>
+        <input type="hidden" name="id" id="product-id">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="product-name">Mahsulot nomi *</label>
+            <input type="text" id="product-name" name="name" placeholder="Masalan: iPhone 15" required>
+          </div>
+
+          <div class="form-group">
+            <label for="product-price">Narxi (so'm) *</label>
+            <input type="number" id="product-price" name="price" min="1" placeholder="4500000" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="product-category">Kategoriya *</label>
+          <select id="product-category" name="category" required>
+            <!-- JS orqali to'ldiriladi -->
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="product-image">Rasm havolasi (URL yoki yo'l)</label>
+          <input type="text" id="product-image" name="image" placeholder="/shared/img/products/telefon-1.webp">
+
+          <label for="product-file" style="margin-top: 8px; font-size: 13px; color: #666;">Yoki kompyuterdan rasm tanlang:</label>
+          <input type="file" id="product-file" accept="image/*" style="padding: 8px; font-size: 14px;">
+
+          <img id="image-preview" class="image-preview hidden" src="" alt="Rasm ko'rinishi">
+        </div>
+
+        <div class="form-group">
+          <label for="product-desc">Qisqa tavsif</label>
+          <textarea id="product-desc" name="description" rows="3" placeholder="Mahsulot xususiyatlari..."></textarea>
+        </div>
+
+        <p id="form-error" class="form-error hidden" role="alert"></p>
+
+        <div class="form-actions">
+          <button type="submit" id="submit-btn" class="btn btn-primary">Saqlash</button>
+          <button type="button" id="cancel-btn" class="btn btn-secondary hidden">Bekor qilish</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- 2-bo'lim: Ro'yxat kartasi -->
+    <section class="card list-card">
+      <div class="list-header">
+        <h2>Mahsulotlar ro'yxati</h2>
+        <div class="filter-box">
+          <label for="filter-category">Kategoriya:</label>
+          <select id="filter-category">
+            <option value="all">Barchasi</option>
+            <!-- JS orqali to'ldiriladi -->
+          </select>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Rasm</th>
+              <th>Nomi</th>
+              <th>Kategoriya</th>
+              <th>Narx</th>
+              <th>Amallar</th>
+            </tr>
+          </thead>
+          <tbody id="products-body">
+            <!-- JS orqali to'ldiriladi -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <p id="toast" class="toast hidden" role="status"></p>
+
+  <script src="/shared/js/config.js"></script>
+  <script src="/shared/js/utils.js"></script>
+  <script src="/shared/js/store.js"></script>
+  <script src="/admin/js/admin.js"></script>
+</body>
+</html>

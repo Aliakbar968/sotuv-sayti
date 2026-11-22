@@ -1,0 +1,313 @@
+// Agar fayl nomlari sizda boshqacha bo'lsa, shunga moslang
+// @use 'variables' as *;
+// @use 'mixins' as *;
+
+$color-primary: #1a1a1a;
+$color-bg: #f6f6f4;
+$color-card: #ffffff;
+$color-border: #e0dfd9;
+$color-text: #1c1c1a;
+$color-muted: #666660;
+$color-danger: #B3261E;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: $color-bg;
+  color: $color-text;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+// Header
+.admin-header {
+  background: $color-card;
+  border-bottom: 1px solid $color-border;
+  padding: 16px 0;
+  margin-bottom: 24px;
+
+  .header-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .shop-subtitle {
+    font-size: 14px;
+    color: $color-muted;
+  }
+}
+
+.admin-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  .nav-btn {
+    padding: 8px 14px;
+    border: 1px solid $color-border;
+    background: transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+
+    &.active {
+      background: $color-primary;
+      color: #fff;
+      border-color: $color-primary;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  .site-link {
+    margin-left: 8px;
+    font-size: 14px;
+    color: $color-text;
+    text-decoration: none;
+    &:hover { text-decoration: underline; }
+  }
+}
+
+// Mobil birinchi (390px): 1 ustun
+.admin-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  padding-bottom: 48px;
+}
+
+.card {
+  background: $color-card;
+  border: 1px solid $color-border;
+  border-radius: 12px;
+  padding: 20px;
+
+  h2 {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+}
+
+// Forma elementlari (iPhone zoom bo'lmasligi uchun font-size: 16px, balandligi 44px)
+.form-group {
+  margin-bottom: 14px;
+
+  label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+
+  input, select, textarea {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 12px;
+    border: 1px solid $color-border;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: inherit;
+    background: #fff;
+
+    &:focus {
+      outline: 2px solid $color-primary;
+      border-color: transparent;
+    }
+  }
+
+  textarea {
+    min-height: 80px;
+    resize: vertical;
+  }
+}
+
+.image-preview {
+  margin-top: 8px;
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid $color-border;
+}
+
+.form-error {
+  color: $color-danger;
+  background: rgba($color-danger, 0.08);
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 8px;
+  border: none;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+
+  &-primary {
+    background: $color-primary;
+    color: #fff;
+    flex: 1;
+  }
+
+  &-secondary {
+    background: $color-bg;
+    color: $color-text;
+    border: 1px solid $color-border;
+  }
+}
+
+// Ro'yxat va Jadval
+.list-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+
+  h2 { margin-bottom: 0; }
+
+  .filter-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    select {
+      min-height: 40px;
+      padding: 6px 12px;
+      border-radius: 8px;
+      border: 1px solid $color-border;
+      font-size: 15px;
+    }
+  }
+}
+
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 560px;
+
+  th, td {
+    text-align: left;
+    padding: 12px 10px;
+    border-bottom: 1px solid $color-border;
+    font-size: 14px;
+    vertical-align: middle;
+  }
+
+  th {
+    color: $color-muted;
+    font-weight: 600;
+  }
+}
+
+.thumb {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 6px;
+  background: $color-bg;
+  display: block;
+}
+
+.action-btns {
+  display: flex;
+  gap: 6px;
+}
+
+.btn-sm {
+  padding: 6px 10px;
+  font-size: 13px;
+  border-radius: 6px;
+  border: 1px solid $color-border;
+  background: #fff;
+  cursor: pointer;
+
+  &.btn-danger {
+    color: $color-danger;
+    border-color: rgba($color-danger, 0.3);
+    &:hover {
+      background: $color-danger;
+      color: #fff;
+    }
+  }
+}
+
+// Toast xabar
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: $color-primary;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+}
+
+// Planshet (768px): nom va narx yonma-yon
+@media (min-width: 768px) {
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+}
+
+// Kompyuter (1024px+): 2 ustun (360px forma chapda sticky, ro'yxat o'ngda)
+@media (min-width: 1024px) {
+  .admin-layout {
+    grid-template-columns: 360px 1fr;
+    align-items: start;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr; // chap ustun 360px bo'lgani uchun maydonlar yana ustma-ust qulay
+  }
+
+  .form-card {
+    position: sticky;
+    top: 16px;
+  }
+}

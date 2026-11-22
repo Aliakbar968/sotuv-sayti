@@ -1,17 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="uz">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/site/css/main.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Do'konim — Katalog</title>
+ <link rel="stylesheet" href="/site/css/main.css">
 </head>
 <body>
-<h1>Salom, bu sayt sahifasi</h1>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/site/" class="logo">
+        <span class="logo__icon" aria-hidden="true">🛍️</span>
+        <span class="logo__text" id="shop-logo-name">Do'konim</span>
+      </a>
 
-<script src="/shared/js/config.js"></script>
-<script src="/shared/js/utils.js"></script>
-<script src="/shared/js/store.js"></script>
+      <!-- Hali yo'q sahifalar izohga olindi
+      <nav class="main-nav">
+        <a href="#">Katalog</a>
+        <a href="#">Aksiyalar</a>
+      </nav>
+      -->
+
+      <a href="/admin/" class="admin-badge">Admin panel</a>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <section class="catalog-section">
+      <h1>Mahsulotlar</h1>
+
+      <div id="filters" class="filters" role="group" aria-label="Kategoriyalar">
+        <!-- JS orqali kategoriya tugmalari chiqadi -->
+      </div>
+
+      <ul id="products" class="products-grid">
+        <!-- JS orqali mahsulot kartalari chiqadi -->
+      </ul>
+
+      <p id="empty" class="empty-msg" hidden>Bu kategoriyada hozircha mahsulot yo'q</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="footer-year">2026</span> <span id="footer-shop-name">Do'konim</span>. Barcha huquqlar himoyalangan.</p>
+    </div>
+  </footer>
+
+  <script src="/shared/js/config.js"></script>
+  <script src="/shared/js/utils.js"></script>
+  <script src="/shared/js/store.js"></script>
+  <script src="/site/js/site.js"></script>
 </body>
 </html>

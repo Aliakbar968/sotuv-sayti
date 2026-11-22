@@ -47,10 +47,10 @@ function seedIfNeeded() {
   if (localStorage.getItem(STORAGE_KEYS.PRODUCTS) === null) {
     const now = Date.now();
     const initialProducts = [
-      { id: makeId('p_'), name: 'Samsung Galaxy A55', price: 4500000, category: 'telefon', image: '/shared/img/products/telefon-1.jpg', description: '8/256 GB, Super AMOLED ekran, 50 MP kamera', createdAt: now - 7000 },
-      { id: makeId('p_'), name: 'iPhone 15 Pro', price: 13200000, category: 'telefon', image: '/shared/img/products/telefon-2.jpg', description: '256 GB, Titan korpus, A17 Pro chip', createdAt: now - 6000 },
-      { id: makeId('p_'), name: 'MacBook Air M2', price: 12800000, category: 'noutbuk', image: '/shared/img/products/noutbuk-1.jpg', description: '13.6 dyuym, 8/256 GB, yengil va tezkor', createdAt: now - 5000 },
-      { id: makeId('p_'), name: 'ASUS Vivobook 15', price: 6900000, category: 'noutbuk', image: '/shared/img/products/noutbuk-2.jpg', description: 'Core i5, 16/512 GB SSD, ofis va o‘qish uchun', createdAt: now - 4000 },
+      { id: makeId('p_'), name: 'Samsung Galaxy A55', price: 4500000, category: 'telefon', image: '/shared/img/products/telefon-1.webp', description: '8/256 GB, Super AMOLED ekran, 50 MP kamera', createdAt: now - 7000 },
+      { id: makeId('p_'), name: 'iPhone 15 Pro', price: 13200000, category: 'telefon', image: '/shared/img/products/telefon-2.webp', description: '256 GB, Titan korpus, A17 Pro chip', createdAt: now - 6000 },
+      { id: makeId('p_'), name: 'MacBook Air M2', price: 12800000, category: 'noutbuk', image: '/shared/img/products/laptop-1.webp', description: '13.6 dyuym, 8/256 GB, yengil va tezkor', createdAt: now - 5000 },
+      { id: makeId('p_'), name: 'ASUS Vivobook 15', price: 6900000, category: 'noutbuk', image: '/shared/img/products/laptop-2.jpg', description: 'Core i5, 16/512 GB SSD, ofis va o‘qish uchun', createdAt: now - 4000 },
       { id: makeId('p_'), name: 'iPad Air 5', price: 7800000, category: 'planshet', image: '/shared/img/products/planshet-1.jpg', description: 'M1 chip, 10.9 dyuym Liquid Retina ekran', createdAt: now - 3000 },
       { id: makeId('p_'), name: 'Samsung Galaxy Tab S9', price: 8900000, category: 'planshet', image: '/shared/img/products/planshet-2.jpg', description: 'S-Pen bilan, AMOLED 120Hz ekran', createdAt: now - 2000 },
       { id: makeId('p_'), name: 'AirPods Pro 2', price: 2950000, category: 'aksessuar', image: '/shared/img/products/aksessuar-1.jpg', description: 'Faol shovqinni bosish, MagSafe quti', createdAt: now - 1000 },
@@ -59,6 +59,7 @@ function seedIfNeeded() {
     write(STORAGE_KEYS.PRODUCTS, initialProducts);
   }
 }
+
 
 // Tashqariga chiqadigan asosiy obyekt
 const Store = {
